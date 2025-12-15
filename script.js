@@ -72,3 +72,101 @@
 
   sections.forEach((s) => io.observe(s));
 })();
+// ===== Skills slider: buttons + dots + drag/swipe
+(() => {
+  const slider = document.querySelector(".skills-slider");
+  if (!slider) return;
+
+  const track = slider.querySelector(".skills-track");
+  const dotsWrap = slider.querySelector(".skills-dots");
+  const btns = slider.querySelectorAll(".slider-btn");
+  const cards = Array.from(slider.querySelectorAll(".skill-card"));
+
+  if (!track || !dotsWrap || cards.length === 0) return;
+
+  // Create dots
+  dotsWrap.innerHTML = "";
+  const dots = cards.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "dot";
+    b.setAttribute("aria-label", `Go to skills card ${i + 1}`);
+    b.addEventListener("click", () => scrollToCard(i));
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function cardWidthWithGap() {
+    const first = cards[0];
+    const cardRect = first.getBoundingClientRect();
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+    return cardRect.width + gap;
+  }
+
+  function scrollToCard(index) {
+    const x = index * cardWidthWithGap();
+    track.scrollTo({ left: x, behavior: "smooth" });
+  }
+
+  function activeIndex() {
+    const w = cardWidthWithGap();
+    return Math.round(track.scrollLeft / w);
+  }
+
+  function updateDots() {
+    const idx = Math.max(0, Math.min(cards.length - 1, activeIndex()));
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+  }
+
+  // Buttons
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const dir = Number(btn.getAttribute("data-dir")) || 1;
+      const next = Math.max(0, Math.min(cards.length - 1, activeIndex() + dir));
+      scrollToCard(next);
+    });
+  });
+
+  // Track scroll updates dots
+  track.addEventListener("scroll", () => {
+    window.requestAnimationFrame(updateDots);
+  });
+
+  // Drag/swipe (mouse + touch)
+  let isDown = false;
+  let startX = 0;
+  let startLeft = 0;
+
+  const onDown = (clientX) => {
+    isDown = true;
+    startX = clientX;
+    startLeft = track.scrollLeft;
+  };
+
+  const onMove = (clientX) => {
+    if (!isDown) return;
+    const dx = clientX - startX;
+    track.scrollLeft = startLeft - dx;
+  };
+
+  const onUp = () => {
+    if (!isDown) return;
+    isDown = false;
+    // snap to nearest card
+    const idx = activeIndex();
+    scrollToCard(idx);
+  };
+
+  track.addEventListener("mousedown", (e) => onDown(e.clientX));
+  window.addEventListener("mousemove", (e) => onMove(e.clientX));
+  window.addEventListener("mouseup", onUp);
+
+  track.addEventListener("touchstart", (e) => onDown(e.touches[0].clientX), { passive: true });
+  track.addEventListener("touchmove", (e) => onMove(e.touches[0].clientX), { passive: true });
+  track.addEventListener("touchend", onUp);
+
+  // Initialize
+  updateDots();
+  window.addEventListener("resize", updateDots);
+})();

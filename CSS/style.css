@@ -375,3 +375,161 @@ p {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   Skills Slider
+   ========================= */
+
+.skills {
+  padding: 4rem 0;
+}
+
+/* Keep your existing .section-head styles if already added */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  letter-spacing: -0.3px;
+}
+
+.section-head p {
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* Slider wrapper */
+.skills-slider {
+  position: relative;
+}
+
+/* Top controls row */
+.skills-slider-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.skills-slider-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slider-btn {
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.45rem 0.7rem;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.slider-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary), transparent 65%);
+}
+
+/* Viewport and track */
+.skills-viewport {
+  border-radius: var(--radius);
+  overflow: hidden;
+  outline: none;
+}
+
+.skills-viewport:focus {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary), transparent 65%);
+}
+
+.skills-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 1rem;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  padding: 0.25rem 0.25rem 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar (still scrollable) */
+.skills-track::-webkit-scrollbar {
+  height: 8px;
+}
+.skills-track::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted), transparent 65%);
+  border-radius: 999px;
+}
+.skills-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Card styling (keeps your existing feel) */
+.skill-card {
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev), transparent 10%);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.1rem 1.2rem;
+}
+
+.skill-card h3 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.9rem 0 0;
+}
+
+.skill-list li {
+  padding: 0.35rem 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Dots */
+.skills-dots {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-top: 0.85rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-color: transparent;
+}
+
+/* Responsive card width behavior */
+@media (max-width: 720px) {
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .skills-track {
+    grid-auto-columns: minmax(82%, 1fr);
+  }
+}
