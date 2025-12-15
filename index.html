@@ -1,142 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="portfolio webpage">
-    <meta property="og:title" content="portfolio webpage">
-    <meta property="og:description" content="Denis koumbou portfolio webpage">
-    <meta property="og:image" content="path/to/image.jpg">
-    <title>Denis koumbou Portfolio webpage</title>
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="Assets/CSS/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Denis Koumbou — Full-Stack Developer" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <title>Denis Koumbou | Portfolio</title>
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="CSS/style.css" />
+
+  <!-- Base script -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
 
-        <h1>Denis Koumbou</h1>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+  <!-- Content will be added section by section -->
 
-        <section id="hero">
-            <div>
-                <h2>Full-Stack Developer</h2>
-                <p>Design,build and repair websites/web apps <br>
-                ensuring performance,usability and long-term stability</p>
-                <Button>Download resume</Button>
-                <button>Contact me</button>
-            </div>
-            <img src="Assets/Img/IMG_3247.jpg" width="300" alt="picture of me">
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="list-of-skills">
-                <h3>Frontend</h3>
-                <ul>
-                    <li><i class="devicon-html5-plain-wordmark colored"></i> HTML5</li>
-                    <li><i class="devicon-css3-plain-wordmark colored"></i> CSS3</li>
-                    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                    <li><i class="devicon-react-original-wordmark colored"></i> React</li>
-                    <li><i class="devicon-bootstrap-plain-wordmark colored"></i> Bootstrap</li>
-                    <li><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
-                </ul>
-            </div>
-
-            <div class="list-of-skills">
-                <h3>Backend</h3>
-                <ul>
-                    <li><i class="devicon-nodejs-plain-wordmark colored"></i> Node.js</li>
-                    <li><i class="devicon-express-original-wordmark colored"></i> Express.js</li>
-                    <li><i class="devicon-python-plain-wordmark colored"></i> Python</li>
-                    <li><i class="devicon-django-plain-wordmark colored"></i> Django</li>
-                    <li><i class="devicon-php-plain colored"></i> PHP</li>
-                </ul>
-            </div> 
-
-            <div class="list-of-skills">
-                <h3>Database</h3>
-                <ul>
-                    <li><i class="devicon-mysql-plain-wordmark colored"></i> MySQL</li>
-                    <li><i class="devicon-mongodb-plain-wordmark colored"></i> MongoDB</li>
-                    <li><i class="devicon-postgresql-plain-wordmark colored"></i> PostgreSQL</li>
-                    <li><i class="devicon-firebase-plain-wordmark colored"></i> Firebase</li>
-                </ul>
-            </div>
-
-            <div class="list-of-skills">
-                <h3>DevOps</h3>
-                <ul>
-                    <li><i class="devicon-docker-plain-wordmark colored"></i> Docker</li>
-                    <li><i class="devicon-git-plain-wordmark colored"></i> Git</li>
-                    <li><i class="devicon-github-original-wordmark colored"></i> GitHub</li>
-                    <li><i class="devicon-linux-plain colored"></i> Linux</li>
-                    <li><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</li>
-                </ul>
-            </div>
-
-            <div class="list-of-skills">
-                <h3>tools</h3>
-                <ul>
-                    <li><i class="devicon-vscode-plain colored"></i>Visual Studio Code</li>
-                    <li><i class="devicon-postman-plain colored"></i>Postman</li>
-                    <li><i class="devicon-figma-plain colored"></i>Figma</li>
-                </ul>
-            </div>
-
-            <div class="list-of-skills">
-                <h3>Languages</h3>
-                <ul>
-                    <li>English - Fluent</li>
-                    <li>French - Native</li>
-                    <li>Spanish - Intermediate</li>
-                </ul>
-            </div>
-        </section>
-
-        `<section id="projects">
-            <h2>Projects</h2>
-            <button><a href="https://github.com/d-linux">View my Github</a></button>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="Assets/Img/IMG_3247.jpg" width="200px" alt="A picture of Me">
-            <p>I’m Denis Koumbou, a full-stack developer specializing in building fast, scalable, and user-centric applications.<br> 
-                I enjoy turning complex problems into clean maintainable solutions.<br>
-                My expertise spans React, Node.js, databases, and cloud deployment, and I love working across the entire development lifecycle—from architecture to deployment. <br>
-                I’m passionate about continuous learning and I’m currently exploring [technology/area]. <br>
-                When I’m not coding, I enjoy Playing basketball.
-            </p>
-        </section>
-    </main>
-
-    <Footer>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form action="mailto:devonlinux@outlook.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" placeholder="your name" required><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="your Email" required><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" placeholder="write message here" required></textarea><br>
-                <input type="submit" value="Send">
-            </form>
-        </section>
-        <div class="social-icons">
-            
-        </div>
-        <p>&copy; 2025 Denis Koumbou. All rights reserved.</p>
-    </Footer>
 </body>
 </html>
