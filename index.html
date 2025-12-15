@@ -15,8 +15,35 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Go to top">
+      <span class="brand-mark" aria-hidden="true">DK</span>
+      <span class="brand-text">Denis Koumbou</span>
+    </a>
 
-  <!-- Content will be added section by section -->
+    <nav class="site-nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Open menu</span>
+        <span aria-hidden="true" class="burger"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-menu">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span class="icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
 
 </body>
 </html>
