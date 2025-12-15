@@ -358,5 +358,154 @@
     </div>
   </div>
 </section>
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p class="muted">Send a message and I’ll get back to you.</p>
+    </div>
 
+    <div class="contact-grid">
+      <!-- Left: Form -->
+      <form class="contact-card contact-form" id="contactForm" novalidate>
+        <div class="form-row two">
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              placeholder="Your first name"
+              autocomplete="given-name"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              placeholder="Your last name"
+              autocomplete="family-name"
+              minlength="2"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="What is this about?"
+              minlength="3"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell me more about your inquiry..."
+              minlength="10"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <button class="contact-submit" type="submit">Send Message</button>
+
+        <p class="contact-note muted">
+          Prefer email? <a class="contact-link" href="mailto:devonlinux@outlook.com">devonlinux@outlook.com</a>
+        </p>
+      </form>
+
+      <!-- Right: Info cards -->
+      <div class="contact-side">
+        <aside class="contact-card contact-info" aria-label="Contact details">
+          <h3>Get in Touch</h3>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </span>
+              <div class="info-text">
+                <p class="info-title">Location</p>
+                <p class="muted">London, UK</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 3h3l2 5-2 1c1 3 3 5 6 6l1-2 5 2v3c0 1-1 2-2 2-9 0-16-7-16-16 0-1 1-2 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="info-text">
+                <p class="info-title">Phone</p>
+                <p class="muted">
+                  <a class="contact-link" href="tel:+44XXXXXXXXXX">+44 (add your number)</a>
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="info-text">
+                <p class="info-title">Email</p>
+                <p class="muted">
+                  <a class="contact-link" href="mailto:devonlinux@outlook.com">devonlinux@outlook.com</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+
+        <aside class="contact-card contact-availability" aria-label="Availability">
+          <h3>Availability</h3>
+          <ul class="availability-list">
+            <li><span>Status</span><span>Open to opportunities</span></li>
+            <li><span>Response</span><span>Usually within 24–48 hours</span></li>
+            <li><span>Work</span><span>Remote / London</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
 </html>
