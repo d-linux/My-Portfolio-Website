@@ -623,3 +623,75 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   About Section
+   ========================= */
+
+.about {
+  padding: 4rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 1.3rem;
+  align-items: start;
+}
+
+.about-text p {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.about-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Side card */
+.about-card {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev), transparent 10%);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+
+.about-card h3 {
+  margin: 0;
+  font-weight: 800;
+}
+
+.about-list {
+  margin: 0.9rem 0 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.about-list div {
+  padding: 0.7rem 0.75rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg), transparent 15%);
+}
+
+.about-list dt {
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.about-list dd {
+  margin: 0.2rem 0 0;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
