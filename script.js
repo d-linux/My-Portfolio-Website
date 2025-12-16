@@ -219,25 +219,51 @@
 })();
 
 // ===== Contact form: validation + submission
+
   const form = document.getElementById("contactForm");
+  const statusEl = document.getElementById("formStatus");
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const res = await fetch("https://formspree.io/f/xyzrqnyq", {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form),
-    });
+    // Trigger native HTML validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
-    if (res.ok) {
+    // Prevent double submits
+    submitBtn.disabled = true;
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+
+    statusEl.textContent = "";
+
+    try {
+      const res = await fetch("https://formspree.io/f/xyzrqnyq", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+
+      if (!res.ok) throw new Error("Submit failed");
+
+      // Success UI (but keep form usable)
+      statusEl.textContent = "Thanks — your message has been sent.";
       form.reset();
-      form.innerHTML = `
-        <h3>Thank you!</h3>
-        <p class="muted">Your message has been sent successfully.</p>
-      `;
-    } else {
-      alert("Something went wrong. Please try again.");
+
+      // Re-enable after 2.5s
+      setTimeout(() => {
+        statusEl.textContent = "";
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }, 2500);
+
+    } catch (err) {
+      statusEl.textContent = "Sorry — something went wrong. Please try again.";
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
     }
   });
 

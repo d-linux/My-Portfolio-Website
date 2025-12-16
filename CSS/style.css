@@ -598,6 +598,18 @@ p {
   flex-wrap: wrap;
 }
 
+/*image*/
+
+.project-image-wrapper {
+  margin-top: 0.9rem;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
 /* Small button variation for project cards */
 .btn-sm {
   padding: 0.55rem 0.85rem;
@@ -907,7 +919,7 @@ p {
 
 /* Availability card (dark card like screenshot, but portfolio-appropriate) */
 .contact-availability {
-  background: #0b1220;
+  background: color-mix(in srgb, var(--bg), transparent 10%);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
