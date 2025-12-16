@@ -217,3 +217,27 @@
 
   sections.forEach(s => io.observe(s));
 })();
+
+// ===== Contact form: validation + submission
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("https://formspree.io/f/xyzrqnyq", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(form),
+    });
+
+    if (res.ok) {
+      form.reset();
+      form.innerHTML = `
+        <h3>Thank you!</h3>
+        <p class="muted">Your message has been sent successfully.</p>
+      `;
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+
