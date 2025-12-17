@@ -326,6 +326,13 @@ p {
   color: var(--text);
 }
 
+.hero-note {
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* Hero card */
 .hero-card {
   border: 1px solid var(--border);
@@ -601,15 +608,18 @@ p {
 /*image*/
 
 .project-image-wrapper {
-  margin-top: 0.9rem;
+  margin: 1rem 0;
   overflow: hidden;
+  border-radius: calc(var(--radius) - 6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
 }
-
 /* Small button variation for project cards */
 .btn-sm {
   padding: 0.55rem 0.85rem;
